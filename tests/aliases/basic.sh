@@ -1,0 +1,2 @@
+alias bar=ls
+bar

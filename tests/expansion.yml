@@ -1,0 +1,29 @@
+- name: basic variable
+  input: first=test; a="first value is $first"; echo "$a"
+
+- name: basic variable no expand
+  input: first=test; a='first value is $first'; echo $a
+
+- name: basic variable expand then no expand
+  input: first=test; a="first value is $first"; echo '$a $first'
+
+- name: basic variable with weird quotes
+  input: first='test'; a="'first value is $first"; echo '"$a $first'
+
+- name: basic variable with weird quotes reversed
+  input: first='test'; a="'first value is $first"; echo "'$a $first"
+
+- name: basic variable with weird quotes escaped
+  input: first='test'; a="'first value is $first"; echo '\"$a $first'
+
+- name: basic variable with undefined variable
+  input: first='test'; a='first value is $i $first'; echo "$a $first"
+
+- name: basic variable with quotes in quotes
+  input: first=""; a='first value is $i $first'; echo "$a $first"
+
+- name: wrong basic variable with quotes in quotes
+  input: first="""; a='first value is $i $first'; echo "$a $first"
+
+- name: basic variable with undefined variable and weird quotes
+  input: first="$first"; a="'first value is "$first"'"; echo ''$a "$first''

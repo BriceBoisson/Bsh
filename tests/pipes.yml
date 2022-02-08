@@ -1,0 +1,35 @@
+- name: basic
+  input: ls | grep Makefile
+
+- name: double pipe
+  input: ls | grep Makefile | grep Makefile
+
+- name: expand
+  input: a="Makefile"; ls | grep "$a"
+
+- name: multiple file
+  input: ls -R src | grep src
+
+- name: multiple file globing failed
+  input: ls -R src | grep *.c
+
+- name: multiple file globing
+  input: ls -R src | grep .c
+
+- name: pipe builtin pass
+  input: echo "test|pass" | grep pass
+
+- name: pipe builtin pass
+  input: echo "test|pass" | grep failed
+
+- name: 3 pipes
+  input: cat Makefile | grep "@" | grep "echo"
+
+- name: most used
+  input: cat /root/.bash_history | cut -d' ' -f1 | sort | uniq -c | tr -s ' ' | cut -c 2- | sort -nr | head
+
+- name: no builtins
+  input: ls | grep -E "*.c"
+
+- name: mutltiple no builtins
+  input: ls | grep "s" | grep "bui"

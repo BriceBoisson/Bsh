@@ -1,0 +1,11 @@
+- name: Not found
+  input: eiyeriy
+
+- name: Error during execution
+  input: cat eiodeiohjhrh
+
+- name: Error during parsing
+  input: if echo test; else echo t
+
+- name: Error during lexing
+  input: echo "eeee''

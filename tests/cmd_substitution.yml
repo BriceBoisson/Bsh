@@ -1,0 +1,8 @@
+- name: Basic
+  file: tests/cmd_substitution/basic.sh
+
+- name: Backticks
+  file: tests/cmd_substitution/backticks.sh
+
+- name: With while loops
+  file: tests/cmd_substitution/with_while_loop.sh

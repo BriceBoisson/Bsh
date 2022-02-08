@@ -1,0 +1,17 @@
+- name: Basic for
+  file: tests/for/basic.sh
+
+- name: For in for
+  file: tests/for/for_in_for.sh
+
+- name: For with variables
+  file: tests/for/for_in_variables.sh
+
+- name: For mixed ';' and '\n'
+  file: tests/for/mixed.sh
+
+- name: For no args no in
+  file: tests/for/no_args_no_in.sh
+
+- name: Multiple for
+  file: tests/for/multiple.sh

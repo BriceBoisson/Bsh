@@ -1,0 +1,35 @@
+- name: exit in case
+  input: a=33; case 22 in ($a) echo oui;; (22) echo non; exit;; esac; echo oui
+
+- name: basic
+  file: tests/case/basic.sh
+
+- name: all_case
+  input: "case 'yoyoy' in bruh) echo error;; *) echo ayaya;; esac"
+
+- name: no_match
+  input: "case 'yoyoy' in bruh) echo error;; efefefef) echo ayaya;; esac; echo 'this is the first line'"
+
+- name: no_case_clause
+  input: "case 'yoyoy' in esac"
+
+- name: no_ending_semicolons
+  input: "case 'yoyoy' in bruh) echo error;; yoyoy) echo ayaya; esac"
+
+- name: case_in_case
+  input: "case test in test) case second in s) echo false;; (second) echo ok;; esac; echo woow!;; esac"
+
+- name: hard_semicolon
+  input: "case test in bruh) echo error;; test) echo ayaya;; a) echo a; esac"
+
+- name: if_in_case
+  input: "case test in bruh) echo error;; test) if true; then echo ok; fi;; a) echo a; esac"
+
+- name: case_in_function
+  file: tests/case/case_in_function.sh
+
+- name: if_in_case_in_if
+  file: tests/case/if_in_case_in_if.sh
+
+- name: multiple_condition_case
+  file: tests/case/multiple_condition_case.sh

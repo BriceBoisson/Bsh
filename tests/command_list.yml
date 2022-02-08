@@ -1,0 +1,26 @@
+- name: Two commands separated by semicolon
+  input: echo Hello; echo World!;
+
+- name: Two commands, semicolon at the end
+  input: echo Hello; echo World!;
+
+- name: Two commands, no space between semicolon and word
+  input: echo "Hello";echo "World!"
+
+- name: Only semicolon
+  input: ;
+
+- name: Many commands
+  input: ls;pwd;cat Makefile;echo "Test";
+
+- name: Two semicolons
+  input: ;;
+
+- name: One command and two semicolons
+  input: echo;;
+
+- name: Many semicolons with 2 commands
+  input: echo salut;;;;; pwd;
+
+- name: Wrong commands and multiple semicolons
+  input: a;a;a;a;;a;a;;;;a;;a;a;a;;a;

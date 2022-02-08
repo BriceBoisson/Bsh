@@ -1,0 +1,59 @@
+- name: Basic folder
+  input: cd src; pwd
+
+- name: Multiple folders
+  input: cd src; cd builtins; cd ..; pwd
+
+- name: Long path
+  input: cd src/../tests/../; pwd
+
+- name: Long path, doesn't work
+  input: cd src/builtins/Makefile/ ; pwd
+
+- name: Wrong folder
+  input: cd jenexistepas; pwd
+
+- name: File
+  input: cd Makefile; pwd
+
+- name: Folder then a dash
+  input: cd src; cd -; pwd
+
+- name: Root
+  input: cd ./; pwd
+
+- name: Root then folder
+  input: cd ./src; pwd
+
+- name: Root then folder then reroot
+  input: cd ./src; cd ./; pwd
+
+- name: Root after folder
+  input: cd src/./; pwd
+
+- name: Root then dash
+  input: cd ./; cd -; pwd
+
+- name: Root folder then dash
+  input: cd ./src/builtins; cd -; pwd
+
+- name: Root folder inexistant
+  input: cd ./jenexistepas; pwd
+
+- name: Root folder is a file
+  input: cd ./Makefile; pwd
+
+- name: Double root
+  input: cd ././; pwd
+
+- name: Multiple dash
+  input: cd -----; pwd
+
+- name: Chained dash
+  input: cd /tmp; cd /root; echo start; cd -; pwd; cd -; pwd; cd -; pwd; cd -; pwd; cd -; pwd; cd -; echo end; pwd
+
+- name: Go back but too far
+  input: cd ../../../../../../../../../../../../../../tmp; pwd; cd /home; cd -; pwd;
+
+- name: Go back (absolute) but too far
+  input: cd /../../../../../../../../../../../../../../tmp; pwd; cd /home; cd -; pwd;

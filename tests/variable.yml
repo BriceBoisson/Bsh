@@ -1,0 +1,65 @@
+- name: basic
+  input: a=ok; echo $a
+
+- name: for basic
+  input: for i in yo lo; do echo $i; done
+
+- name: for basic quotes
+  input: for i in 'yo' "lo"; do echo $i;; done
+
+- name: for quotes with variable
+  input: a=12; for i in 'y$ao' "lo"; do echo $i; echo $a; done
+
+- name: for quotes with variable 2
+  input: a=12; for i in 'y$ao' "l$ao"; do echo $i; echo $a; done
+
+- name: for with double declaration
+  input: i=12; for i in 'yo' "lo"; do echo $i; done
+
+- name: for with brackets variable
+  input: a=12; for i in 'y$ao' "l$ao"; do echo ${i}; echo $a; done
+
+- name: for basic
+  input: for i in yo lo; do echo $i; done
+
+- name: for adv 1
+  input: r=aaa; t='-$r-'; s="-$r-"; elt=rr$r$t$s'oo$r 'oo" tt"pp" "; cat=ee${elt}ee; for i in "gg" "$cat"; do echo "$i"; done
+
+- name: for adv 2
+  input: r=aaa; t='-$r-'; s="-$r-'"; elt=rr$r$t$s'oo$r 'oo" tt"pp" "; cat=ee${elt}ee; for i in "gg" "$cat"; do echo "$i"; done
+
+- name: for adv 3
+  input: r=aaa; t='-$r-'; s="-$r'-"; elt=rr$r$t$s'oo$r 'oo" tt"pp" "; cat=ee${elt}ee; for i in "gg" "$cat"; do echo "$i"; done
+
+- name: for adv 4
+  input: r=aaa; t='-$r-'; s="-$r-"; elt=rr$r$t$s'oo$r 'oo" tt"pp" "; cat=ee${elt}ee; for i in "gg $cat"; do echo "$i"; done
+
+- name: for adv 5
+  input: r=aaa; t='-$r-'; s="-$r-'"; elt=rr$r$t$s'oo$r 'oo" tt"pp" "; cat=ee${elt}ee; for i in "gg $cat"; do echo "$i"; done
+
+- name: for space in list
+  input: for i in "ee oo"; do echo $i; done
+
+- name: for space in list 2
+  input: a=22; for i in "ee oo" $a; do echo $i; done
+
+# - name: name with \
+#   input: \$a=11; b=22; echo $\$a $b
+
+- name: mix non quote and quote
+  input: A=hello; echo $A '$A' \'$A\'
+
+- name: test special
+  input: echo $?
+
+- name: test special end
+  input: a=22; echo $a?
+
+- name: test special end 2
+  input: echo $?@
+
+- name: only $
+  input: echo \n$
+
+- name: only $ quoted
+  input: echo "\n$"

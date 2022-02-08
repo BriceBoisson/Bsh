@@ -1,0 +1,8 @@
+- name: for adv 5
+  input: r=aaa; t='-$r-'; s="-$r-'"; elt=rr$r$t$s'oo$r 'oo" tt"pp" "; cat=ee${elt}ee; for i in "gg ""$cat"; do echo "$i"; done
+
+- name: for adv 6
+  input: r=aaa; t='-$r-'; s="-$r-'"; elt=rr$r$t$s'oo$r 'oo" tt"pp" "; cat=ee${elt}ee; for i in 'gg '"$cat"; do echo "$i"; done
+
+- name: mix non quote and quote
+  input: A=hello; echo $A'$A'\'$A\'

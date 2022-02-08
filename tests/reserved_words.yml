@@ -1,0 +1,32 @@
+- name: "Then and fi as arguments"
+  input: "if echo foo then echo bar fi; then echo 1; fi"
+
+- name: "Bad command with then and fi as arguments"
+  input: "if echo foo then echo bar fi;"
+
+- name: "Good command with then and else as arguments"
+  input: "if echo then; then echo else; fi"
+
+- name: "Medium good command"
+  input: "if echo else; then if echo fi; then echo else; fi; fi"
+
+- name: "Medium bad command with reserved word after then"
+  input: "if echo else; then if echo fi; then else echo test; fi; fi"
+
+- name: "Medium bad command with reserved word after if"
+  input: "if fi; then if echo fi; then else echo test; fi; fi"
+
+- name: "Medium bad command with reserved word after else"
+  input: "if echo fi; then if echo fi; then echo else; else fi; fi; fi"
+
+- name: "Medium bad command with reserved word after elif"
+  input: "if echo fi; then if echo fi; then echo else; elif fi; else fi; fi; fi"
+
+- name: "Medium good command with elif"
+  input: "if echo fi; then echo fi; elif echo fi; then echo else; else echo end; fi"
+
+- name: "Medium bad command with elif"
+  input: "if echo fi; then echo fi; elif fi; then echo else; else echo end; fi"
+
+- name: "Hard bad command with elif"
+  input: "if echo fi; then if echo else; then echo done; elif echo good; then echo elif; else echo test; fi; fi"

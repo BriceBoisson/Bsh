@@ -1,0 +1,6 @@
+foo()
+{
+    echo "foo"
+}
+
+foo

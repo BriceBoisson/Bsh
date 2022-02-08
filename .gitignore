@@ -1,0 +1,8 @@
+.DS_Store
+*.o
+tmp/
+bsh
+doc/
+.vscode/
+builddir/
+vgcore.*

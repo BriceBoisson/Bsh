@@ -1,0 +1,8 @@
+- name: 1 break
+  file: tests/break_and_continue/1_break.sh
+
+- name: 4 break
+  file: tests/break_and_continue/4_break.sh
+
+- name: 5 break 4 loop
+  file: tests/break_and_continue/5_break_4_loop.sh

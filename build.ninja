@@ -1,0 +1,8 @@
+rule call_make
+    command = make $out
+
+build bsh: call_make
+
+build clean: call_make
+
+build check: call_make

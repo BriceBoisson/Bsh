@@ -1,0 +1,74 @@
+- name: Basic words
+  input: echo "Cut, Copy and Paste!"
+
+- name: Basic -n
+  input: echo -n "Cut, Copy and Paste!"
+
+- name: Basic words
+  input: echo "-n"
+
+- name: Multiple Words
+  input: echo "Cut, Copy and Paste!" "Cut, Copy and Paste!"
+
+- name: Multiple Words 2²
+  input: echo "Cut, Copy and Paste!" "Quentin" "Charles"
+
+- name: Word without quote
+  input: echo nathan
+
+- name: Sentence without quote
+  input: echo Je suis une phrase sans quote
+
+- name: Sentence without quote with option
+  input: echo -n Je suis une phrase sans quote
+
+- name: Sentence without quote with multiple spaces
+  input: echo Je     suis     une  phrase    sans  quote
+
+- name: Sentence without quote with multiple spaces with option
+  input: echo -n Je     suis     une  phrase    sans  quote
+
+- name: Sentence without quote with multiple spaces and a lost option
+  input: echo Je     suis     une -n phrase    sans  quote
+
+- name: Echo empty
+  input: echo
+
+- name: Echo empty with -n
+  input: echo -n
+
+- name: Echo empty with -n and empty quote
+  input: echo -n ""
+
+- name: Echo empty quote
+  input: echo ""
+
+- name: Echo real backlash n
+  input: echo "\n"
+
+- name: Echo wrong option
+  input: echo -a
+
+- name: Echo wrong option followed by real one
+  input: echo -a -n
+
+- name: Echo wrong option preceded by real one
+  input: echo -a -n
+
+- name: Option in quote with word
+  input: echo "-n salut"
+
+- name: Option in quote with word and mutliple spaces
+  input: echo "-n   salut"
+
+- name: Option in quote with no other word inside quote
+  input: echo "-n" "salut"
+
+- name: Option in quote with space inside
+  input: echo "-n " "salut"
+
+- name: Long argument
+  input: echo Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in
+
+- name: 10 paragraphs
+  file: tests/echo/very_long.sh
